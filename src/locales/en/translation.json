@@ -183,6 +183,31 @@
     "phase3": "Phase 3: Light up the rest of Chinatown",
     "campaignHeader": "Light Up Chinatown Fundraising Campaign:",
     "campaignDates": "November 1 - 30, 2020",
-    "campaignDaysLeft": "More Days Left"
+    "campaignDaysLeft": "More Days Left",
+    "donationAmount": "{{donationCount}} donations",
+    "donationProgress": "{{remainingAmount}} out of {{availableAmount}} donations",
+    "tier1": {
+      "cta": "Donate What You Wish",
+      "title": "Tier 1: Keeping Chinatown Lit",
+      "description1": "100% of donation goes towards permanent light fixtures throughout Chinatown",
+      "buttonText": "Donate"
+    },
+    "tier2": {
+      "cta": "Support with $45",
+      "title": "Tier 2: Adopt-a-Lantern",
+      "description1": "16-inch lantern with your personalization hung on Mott Street",
+      "description2": "Funding permanent light fixtures throughout Chinatown",
+      "description3": "An invitation to the lighting ceremony in December",
+      "buttonText": "Adopt a Lantern"
+    },
+    "tier3": {
+      "cta": "Support with $100",
+      "title": "Tier 3: Adopt-a-Lantern, Keep-a-Lantern",
+      "description1": "18-inch lantern with your personalization hung on Mott Street",
+      "description2": "(1) 18-inch custom designed lantern by a local artist to take home with you",
+      "description3": "Funding permanent light fixtures throughout Chinatown",
+      "description4": "An invitation to the lighting ceremony in December",
+      "buttonText": "Adopt Lanterns"
+    }
   }
 }

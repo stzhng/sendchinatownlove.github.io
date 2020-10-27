@@ -3,42 +3,32 @@ import styled from 'styled-components';
 import lanternHeader from './images/lantern-header.png';
 import lanternFooter from './images/lantern-footer.png';
 import mapImg from './images/map.png';
+import tier1Logo from './images/tier1-logo.png';
+import tier2Logo from './images/tier2-logo.png';
+import tier3Logo from './images/tier3-logo.png';
+import DonationTierItem from './DonationTierItem';
 import { useTranslation } from 'react-i18next';
 
 const LightUpChinatownPage = () => {
   const { t } = useTranslation();
   const today = new Date();
-  const campaignEndDate = new Date("11/30/2020");
+  const campaignEndDate = new Date('11/30/2020');
   const timeUntilEnd = campaignEndDate.getTime() - today.getTime();
   const daysUntilEnd = Math.ceil(timeUntilEnd / (1000 * 3600 * 24));
 
   return (
     <React.Fragment>
       <Banner>
-        <Hero
-          height={304}
-          src={lanternHeader}
-          alt="lantern overlay"
-        />
-        <HeaderText>
-          {t('lightUpChinatown.headerText')}
-        </HeaderText>
-        <HeaderSubtext>
-          {t('lightUpChinatown.headerSubtext')}
-        </HeaderSubtext>
+        <Hero height={304} src={lanternHeader} alt="lantern overlay" />
+        <HeaderText>{t('lightUpChinatown.headerText')}</HeaderText>
+        <HeaderSubtext>{t('lightUpChinatown.headerSubtext')}</HeaderSubtext>
       </Banner>
       <Container>
         <TextContainer>
-          <SummaryHeader>
-            {t('lightUpChinatown.summaryHeader')}
-          </SummaryHeader>
-          <SummaryBody>
-            {t('lightUpChinatown.summaryBody1')}
-          </SummaryBody>
+          <SummaryHeader>{t('lightUpChinatown.summaryHeader')}</SummaryHeader>
+          <SummaryBody>{t('lightUpChinatown.summaryBody1')}</SummaryBody>
           <br></br>
-          <SummaryBody>
-            {t('lightUpChinatown.summaryBody2')}
-          </SummaryBody>
+          <SummaryBody>{t('lightUpChinatown.summaryBody2')}</SummaryBody>
           <br></br>
           <SummaryBody>
             <p>{t('lightUpChinatown.phase1')}</p>
@@ -46,24 +36,20 @@ const LightUpChinatownPage = () => {
             <p>{t('lightUpChinatown.phase3')}</p>
           </SummaryBody>
           <br></br>
-          <SummaryBody>
-            {t('lightUpChinatown.summaryBody3')}
-          </SummaryBody>
+          <SummaryBody>{t('lightUpChinatown.summaryBody3')}</SummaryBody>
           <br></br>
-          <SummaryBody>
-            {t('lightUpChinatown.summaryBody4')}
-          </SummaryBody>
+          <SummaryBody>{t('lightUpChinatown.summaryBody4')}</SummaryBody>
         </TextContainer>
         <MapContainer>
           <Map src={mapImg} /> {/* TODO: Replace with GIF */}
-          <CampaignInfoText color={"#1E1E1E"}>
+          <CampaignInfoText color={'#1E1E1E'}>
             {t('lightUpChinatown.campaignHeader')}
           </CampaignInfoText>
-          <CampaignInfoText color={"#1E1E1E"}>
+          <CampaignInfoText color={'#1E1E1E'}>
             {t('lightUpChinatown.campaignDates')}
           </CampaignInfoText>
-          <CampaignInfoText color={"#CF6E8A"}>
-            {daysUntilEnd}{' '}{t('lightUpChinatown.campaignDaysLeft')}
+          <CampaignInfoText color={'#CF6E8A'}>
+            {daysUntilEnd} {t('lightUpChinatown.campaignDaysLeft')}
           </CampaignInfoText>
         </MapContainer>
       </Container>
@@ -71,13 +57,45 @@ const LightUpChinatownPage = () => {
         <DonationTiersText>
           {t('lightUpChinatown.donationTierText')}
         </DonationTiersText>
+        <DonationTierItem
+          imageUrl={tier1Logo}
+          ctaText={t('lightUpChinatown.tier1.cta')}
+          titleText={t('lightUpChinatown.tier1.title')}
+          descriptionItems={[t('lightUpChinatown.tier1.description1')]}
+          buttonText={t('lightUpChinatown.tier1.buttonText')}
+          currentDonationCount={10}
+          maxDonationCount={0}
+        />
+        <DonationTierItem
+          imageUrl={tier2Logo}
+          ctaText={t('lightUpChinatown.tier2.cta')}
+          titleText={t('lightUpChinatown.tier2.title')}
+          descriptionItems={[
+            t('lightUpChinatown.tier2.description1'),
+            t('lightUpChinatown.tier2.description2'),
+            t('lightUpChinatown.tier2.description3'),
+          ]}
+          buttonText={t('lightUpChinatown.tier2.buttonText')}
+          currentDonationCount={10}
+          maxDonationCount={100}
+        />
+        <DonationTierItem
+          imageUrl={tier3Logo}
+          ctaText={t('lightUpChinatown.tier3.cta')}
+          titleText={t('lightUpChinatown.tier3.title')}
+          descriptionItems={[
+            t('lightUpChinatown.tier3.description1'),
+            t('lightUpChinatown.tier3.description2'),
+            t('lightUpChinatown.tier3.description3'),
+            t('lightUpChinatown.tier3.description4'),
+          ]}
+          buttonText={t('lightUpChinatown.tier3.buttonText')}
+          currentDonationCount={30}
+          maxDonationCount={200}
+        />
       </DonationTierContainer>
       <Banner>
-        <Hero
-          height={395}
-          src={lanternFooter}
-          alt="lantern overlay"
-        />
+        <Hero height={395} src={lanternFooter} alt="lantern overlay" />
       </Banner>
     </React.Fragment>
   );
@@ -107,7 +125,7 @@ const TextContainer = styled.section`
 `;
 
 const Hero = styled.img`
-  height: ${props => props.height}px;
+  height: ${(props) => props.height}px;
   width: 100vw;
 `;
 
@@ -123,7 +141,7 @@ const HeaderText = styled.div`
   font-size: 32px;
   line-height: 44px;
   letter-spacing: 0.02em;
-  color: #FFFFFF;
+  color: #ffffff;
   position: absolute;
   top: 35%;
   left: 50%;
@@ -141,7 +159,7 @@ const HeaderSubtext = styled.div`
   font-size: 24px;
   line-height: 33px;
   letter-spacing: -0.01em;
-  color: #FFFFFF;
+  color: #ffffff;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -162,7 +180,8 @@ const DonationTiersText = styled.div`
   text-transform: uppercase;
   color: #000000;
   padding-bottom: 15px;
-  border-bottom: 1px solid #DEDEDE;
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 15px;
 `;
 
 const SummaryHeader = styled.div`
@@ -172,7 +191,7 @@ const SummaryHeader = styled.div`
   font-size: 32px;
   line-height: 44px;
   letter-spacing: 0.02em;
-  color: ##1E1E1E;
+  color: ##1e1e1e;
   margin-bottom: 40px;
 `;
 
@@ -181,7 +200,7 @@ const SummaryBody = styled.div`
   font-style: normal;
   font-size: 18px;
   line-height: 20px;
-  color: ##1E1E1E;
+  color: ##1e1e1e;
 `;
 
 const MapContainer = styled.section`
@@ -213,7 +232,7 @@ const CampaignInfoText = styled.div`
   font-weight: bold;
   font-size: 16px;
   line-height: 35px;
-  color: ${props => props.color};
+  color: ${(props) => props.color};
 `;
 
 const DonationTierContainer = styled.section`
@@ -221,7 +240,7 @@ const DonationTierContainer = styled.section`
   margin: 35px auto;
   align-items: center;
   @media (max-width: 599px) {
-    padding: 0px 35px;
+    padding: 0px 17px;
   }
 `;
 
