@@ -14,7 +14,7 @@ services:
       # Commands that set up the basic preview infrastructure
       init:
         # Use curl to download Hugo into the Apache service
-        - curl -s https://install-node.now.sh | bash -s --
+        - curl -s https://install-node.now.sh | bash -s -- --yes
 
       build:
         # Hugo's command to build your static site
